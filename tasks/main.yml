@@ -43,3 +43,17 @@
     type: bool
     value: "true"
 
+- name: Disable smart quotes as they’re annoying when typing code
+  osx_defaults:
+    domain: "NSGlobalDomain"
+    key: "NSAutomaticQuoteSubstitutionEnabled"
+    type: bool
+    value: "false"
+
+- name: Disable smart dashes as they’re annoying when typing code
+  osx_defaults:
+    domain: "NSGlobalDomain"
+    key: "NSAutomaticDashSubstitutionEnabled"
+    type: bool
+    value: "false"
+
