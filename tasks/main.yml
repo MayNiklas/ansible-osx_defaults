@@ -71,3 +71,30 @@
     type: int
     value: "0"
 
+- name: Dock on the left side
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "orientation"
+    type: string
+    value: "left"
+
+- name: Automatically hide and show the Dock
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide"
+    type: bool
+    value: "true"
+
+- name: Remove the auto-hiding Dock delay
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide-delay"
+    type: float
+    value: "0"
+
+- name: Remove the animation when hiding/showing the Dock
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide-time-modifier"
+    type: float
+    value: "0"
