@@ -1,4 +1,4 @@
-Role Name
+ansible-osx_defaults
 =========
 
 A brief description of the role goes here.
