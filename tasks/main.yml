@@ -15,3 +15,31 @@
     type: bool
     value: "true"
 
+- name: Show icons for external hard drives on the desktop
+  osx_defaults:
+    domain: "com.apple.finder"
+    key: "ShowExternalHardDrivesOnDesktop"
+    type: bool
+    value: "true"
+
+- name: Do not show icons for internal hard drives on the desktop
+  osx_defaults:
+    domain: "com.apple.finder"
+    key: "ShowHardDrivesOnDesktop"
+    type: bool
+    value: "false"
+
+- name: Show icons for servers on the desktop
+  osx_defaults:
+    domain: "com.apple.finder"
+    key: "ShowMountedServersOnDesktop"
+    type: bool
+    value: "true"
+
+- name: Show icons for removable media on the desktop
+  osx_defaults:
+    domain: "com.apple.finder"
+    key: "ShowRemovableMediaOnDesktop"
+    type: bool
+    value: "true"
+
