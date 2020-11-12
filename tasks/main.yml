@@ -57,3 +57,17 @@
     type: bool
     value: "false"
 
+- name: Require password after screen saver begins
+  osx_defaults:
+    domain: "com.apple.screensaver"
+    key: "askForPassword"
+    type: int
+    value: "1"
+
+- name: Require password immediately after sleep or screen saver begins
+  osx_defaults:
+    domain: "com.apple.screensaver"
+    key: "askForPasswordDelay"
+    type: int
+    value: "0"
+
