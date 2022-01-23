@@ -8,6 +8,13 @@
     type: string
     value: "Dark"
 
+- name: Use light mode for Microsoft Word
+  osx_defaults:
+    domain: "com.microsoft.Word"
+    key: "NSRequiresAquaSystemAppearance"
+    type: bool
+    value: "true"
+
 - name: Avoid creating .DS_Store files on network volumes
   osx_defaults:
     domain: "com.apple.desktopservices"
