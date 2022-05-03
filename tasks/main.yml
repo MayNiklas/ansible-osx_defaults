@@ -75,6 +75,14 @@
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
+
+- name: Save screenshots to Downloads folder.
+  osx_defaults:
+    domain: "com.apple.screencapture"
+    key: "location"
+    type: string
+    value: "${HOME}/Downloads"
+
 - name: Require password after screen saver begins
   osx_defaults:
     domain: "com.apple.screensaver"
@@ -92,12 +100,13 @@
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
-- name: Dock on the left side
+
+- name: Expand save panel by default
   osx_defaults:
-    domain: "com.apple.dock"
-    key: "orientation"
-    type: string
-    value: "left"
+    domain: "NSGlobalDomain"
+    key: "NSNavPanelExpandedStateForSaveMode"
+    type: bool
+    value: "true"
 
 - name: Avoid creating .DS_Store files on network volumes
   osx_defaults:
