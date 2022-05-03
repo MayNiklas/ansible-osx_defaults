@@ -112,3 +112,14 @@
     key: "autohide-time-modifier"
     type: float
     value: "0"
+
+###############################################################################
+# Mail                                                                        #
+###############################################################################
+
+- name: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+  osx_defaults:
+    domain: "com.apple.mail"
+    key: "AddressesIncludeNameOnPasteboard"
+    type: bool
+    value: "false"
