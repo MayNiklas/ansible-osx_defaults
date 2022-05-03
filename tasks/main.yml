@@ -1,12 +1,20 @@
 ---
 # tasks file for ansible-osx_defaults
 
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+
 - name: close shell on exit
   osx_defaults:
     domain: "com.apple.Terminal"
     key: "Window Settings.Basic.shellExitAction"
     type: int
     value: "1"
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
 
 - name: darkmode
   osx_defaults:
@@ -21,6 +29,75 @@
     key: "NSRequiresAquaSystemAppearance"
     type: bool
     value: "true"
+
+- name: Dock on the left side
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "orientation"
+    type: string
+    value: "left"
+
+- name: Automatically hide and show the Dock
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide"
+    type: bool
+    value: "true"
+
+- name: Remove the auto-hiding Dock delay
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide-delay"
+    type: float
+    value: "0"
+
+- name: Remove the animation when hiding/showing the Dock
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "autohide-time-modifier"
+    type: float
+    value: "0"
+
+- name: Disable smart quotes as they’re annoying when typing code
+  osx_defaults:
+    domain: "NSGlobalDomain"
+    key: "NSAutomaticQuoteSubstitutionEnabled"
+    type: bool
+    value: "false"
+
+- name: Disable smart dashes as they’re annoying when typing code
+  osx_defaults:
+    domain: "NSGlobalDomain"
+    key: "NSAutomaticDashSubstitutionEnabled"
+    type: bool
+    value: "false"
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+- name: Require password after screen saver begins
+  osx_defaults:
+    domain: "com.apple.screensaver"
+    key: "askForPassword"
+    type: int
+    value: "1"
+
+- name: Require password immediately after sleep or screen saver begins
+  osx_defaults:
+    domain: "com.apple.screensaver"
+    key: "askForPasswordDelay"
+    type: int
+    value: "0"
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+- name: Dock on the left side
+  osx_defaults:
+    domain: "com.apple.dock"
+    key: "orientation"
+    type: string
+    value: "left"
 
 - name: Avoid creating .DS_Store files on network volumes
   osx_defaults:
@@ -56,62 +133,6 @@
     key: "ShowRemovableMediaOnDesktop"
     type: bool
     value: "true"
-
-- name: Disable smart quotes as they’re annoying when typing code
-  osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "NSAutomaticQuoteSubstitutionEnabled"
-    type: bool
-    value: "false"
-
-- name: Disable smart dashes as they’re annoying when typing code
-  osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "NSAutomaticDashSubstitutionEnabled"
-    type: bool
-    value: "false"
-
-- name: Require password after screen saver begins
-  osx_defaults:
-    domain: "com.apple.screensaver"
-    key: "askForPassword"
-    type: int
-    value: "1"
-
-- name: Require password immediately after sleep or screen saver begins
-  osx_defaults:
-    domain: "com.apple.screensaver"
-    key: "askForPasswordDelay"
-    type: int
-    value: "0"
-
-- name: Dock on the left side
-  osx_defaults:
-    domain: "com.apple.dock"
-    key: "orientation"
-    type: string
-    value: "left"
-
-- name: Automatically hide and show the Dock
-  osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide"
-    type: bool
-    value: "true"
-
-- name: Remove the auto-hiding Dock delay
-  osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide-delay"
-    type: float
-    value: "0"
-
-- name: Remove the animation when hiding/showing the Dock
-  osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide-time-modifier"
-    type: float
-    value: "0"
 
 ###############################################################################
 # Mail                                                                        #
