@@ -1,6 +1,13 @@
 ---
 # tasks file for ansible-osx_defaults
 
+- name: close shell on exit
+  osx_defaults:
+    domain: "com.apple.Terminal"
+    key: "Window Settings.Basic.shellExitAction"
+    type: int
+    value: "1"
+
 - name: darkmode
   osx_defaults:
     domain: "Apple Global Domain"
