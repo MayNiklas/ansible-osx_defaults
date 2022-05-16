@@ -7,8 +7,8 @@
 
 - name: close shell on exit
   osx_defaults:
-    domain: "com.apple.Terminal"
-    key: "Window Settings.Basic.shellExitAction"
+    domain: com.apple.Terminal
+    key: Window Settings.Basic.shellExitAction
     type: int
     value: "1"
 
@@ -18,57 +18,57 @@
 
 - name: darkmode
   osx_defaults:
-    domain: "Apple Global Domain"
-    key: "AppleInterfaceStyle"
+    domain: Apple Global Domain
+    key: AppleInterfaceStyle
     type: string
-    value: "Dark"
+    value: Dark
 
 - name: Use light mode for Microsoft Word
   osx_defaults:
-    domain: "com.microsoft.Word"
-    key: "NSRequiresAquaSystemAppearance"
+    domain: com.microsoft.Word
+    key: NSRequiresAquaSystemAppearance
     type: bool
     value: "true"
 
 - name: Dock on the left side
   osx_defaults:
-    domain: "com.apple.dock"
-    key: "orientation"
+    domain: com.apple.dock
+    key: orientation
     type: string
-    value: "left"
+    value: left
 
 - name: Automatically hide and show the Dock
   osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide"
+    domain: com.apple.dock
+    key: autohide
     type: bool
     value: "true"
 
 - name: Remove the auto-hiding Dock delay
   osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide-delay"
+    domain: com.apple.dock
+    key: autohide-delay
     type: float
     value: "0"
 
 - name: Remove the animation when hiding/showing the Dock
   osx_defaults:
-    domain: "com.apple.dock"
-    key: "autohide-time-modifier"
+    domain: com.apple.dock
+    key: autohide-time-modifier
     type: float
     value: "0"
 
 - name: Disable smart quotes as they’re annoying when typing code
   osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "NSAutomaticQuoteSubstitutionEnabled"
+    domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
     type: bool
     value: "false"
 
 - name: Disable smart dashes as they’re annoying when typing code
   osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "NSAutomaticDashSubstitutionEnabled"
+    domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
     type: bool
     value: "false"
 
@@ -78,22 +78,22 @@
 
 - name: Save screenshots to Downloads folder.
   osx_defaults:
-    domain: "com.apple.screencapture"
-    key: "location"
+    domain: com.apple.screencapture
+    key: location
     type: string
-    value: "${HOME}/Downloads"
+    value: ${HOME}/Downloads
 
 - name: Require password after screen saver begins
   osx_defaults:
-    domain: "com.apple.screensaver"
-    key: "askForPassword"
+    domain: com.apple.screensaver
+    key: askForPassword
     type: int
     value: "1"
 
 - name: Require password immediately after sleep or screen saver begins
   osx_defaults:
-    domain: "com.apple.screensaver"
-    key: "askForPasswordDelay"
+    domain: com.apple.screensaver
+    key: askForPasswordDelay
     type: int
     value: "0"
 
@@ -103,43 +103,43 @@
 
 - name: Expand save panel by default
   osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "NSNavPanelExpandedStateForSaveMode"
+    domain: NSGlobalDomain
+    key: NSNavPanelExpandedStateForSaveMode
     type: bool
     value: "true"
 
 - name: Avoid creating .DS_Store files on network volumes
   osx_defaults:
-    domain: "com.apple.desktopservices"
-    key: "DSDontWriteNetworkStores"
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
     type: bool
     value: "true"
 
 - name: Show icons for external hard drives on the desktop
   osx_defaults:
-    domain: "com.apple.finder"
-    key: "ShowExternalHardDrivesOnDesktop"
+    domain: com.apple.finder
+    key: ShowExternalHardDrivesOnDesktop
     type: bool
     value: "true"
 
 - name: Do not show icons for internal hard drives on the desktop
   osx_defaults:
-    domain: "com.apple.finder"
-    key: "ShowHardDrivesOnDesktop"
+    domain: com.apple.finder
+    key: ShowHardDrivesOnDesktop
     type: bool
     value: "false"
 
 - name: Show icons for servers on the desktop
   osx_defaults:
-    domain: "com.apple.finder"
-    key: "ShowMountedServersOnDesktop"
+    domain: com.apple.finder
+    key: ShowMountedServersOnDesktop
     type: bool
     value: "true"
 
 - name: Show icons for removable media on the desktop
   osx_defaults:
-    domain: "com.apple.finder"
-    key: "ShowRemovableMediaOnDesktop"
+    domain: com.apple.finder
+    key: ShowRemovableMediaOnDesktop
     type: bool
     value: "true"
 
@@ -149,8 +149,8 @@
 
 - name: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
   osx_defaults:
-    domain: "com.apple.mail"
-    key: "AddressesIncludeNameOnPasteboard"
+    domain: com.apple.mail
+    key: AddressesIncludeNameOnPasteboard
     type: bool
     value: "false"
 
@@ -160,18 +160,18 @@
 
 - name: Enable the Develop menu and the Web Inspector in Safari
   osx_defaults:
-    domain: "com.apple.Safari"
+    domain: com.apple.Safari
     key: "{{ item }}"
     type: bool
     value: "true"
   loop:
-    - "IncludeDevelopMenu"
-    - "WebKitDeveloperExtrasEnabledPreferenceKey"
-    - "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled"
+    - IncludeDevelopMenu
+    - WebKitDeveloperExtrasEnabledPreferenceKey
+    - com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
 
 - name: Add a context menu item for showing the Web Inspector in web views
   osx_defaults:
-    domain: "NSGlobalDomain"
-    key: "WebKitDeveloperExtras"
+    domain: NSGlobalDomain
+    key: WebKitDeveloperExtras
     type: bool
     value: "true"
