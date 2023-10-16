@@ -147,12 +147,13 @@
 # Mail                                                                        #
 ###############################################################################
 
-- name: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-  community.general.osx_defaults:
-    domain: com.apple.mail
-    key: AddressesIncludeNameOnPasteboard
-    type: bool
-    value: "false"
+# seems deprecated
+# - name: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
+#   community.general.osx_defaults:
+#     domain: com.apple.mail
+#     key: AddressesIncludeNameOnPasteboard
+#     type: bool
+#     value: "false"
 
 ###############################################################################
 # Safari & WebKit                                                             #
