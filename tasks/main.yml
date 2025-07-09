@@ -144,6 +144,16 @@
     value: "true"
 
 ###############################################################################
+# Printing                                                                    #
+###############################################################################
+- name: Disable automatic scaling of PDFs when printing in Preview
+  community.general.osx_defaults:
+    domain: com.apple.Preview
+    key: PVImagePrintingScaleMode
+    type: bool
+    value: "false"
+
+###############################################################################
 # Mail                                                                        #
 ###############################################################################
 
